@@ -1,4 +1,5 @@
 using ExpenseTrack.Infra.Data.Context;
+using ExpenseTrack.Infra.IoC;
 using Microsoft.AspNetCore.Authentication.BearerToken;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -61,6 +62,10 @@ builder.Services.ConfigureAll<BearerTokenOptions>(option =>
 });
 
 builder.Services.AddAuthorization();
+
+// Adicionar serviços à container de injeção de dependência.
+builder.Services.AddInfrastructure(builder.Configuration);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -70,8 +75,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
-
 app.MapControllers();
+
+app.UseCors("CorsPolicy");
+app.MapIdentityApi<IdentityUser>();
+app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();

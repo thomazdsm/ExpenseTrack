@@ -1,0 +1,81 @@
+# Compiled files
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.sln.metaproj
+*.sln.metaproj.tmp
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+
+# Build Directories
+[Bb]uild/
+[Ll]ogs/
+
+# Visual Studio working directory
+.vscode/
+.vs/
+
+# NuGet Packages
+packages/
+*.nupkg
+.nuget/
+
+# Entity Framework Migrations
+Migrations/
+
+# Azure Pipeline configuration
+.terraform/
+.pipelines/
+.pipelines.yml
+
+# Publish output
+.publish/
+
+# JetBrains Rider settings
+.idea/
+
+# Visual Studio Code workspace settings
+.vscode/
+
+# Database files
+*.mdf
+*.ldf
+*.db
+*.sqlite
+*.db-shm
+*.db-wal
+
+# Dotnet watch outputs
+.dotnet_watch.json
+
+# Entity Framework Core migrations scripts
+*.Designer.cs
+
+# Environment variables files
+.env
+.env.*
+
+# Rider project files
+.idea/
+
+# Thumbs.db (Windows)
+Thumbs.db
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# App settings - Configuration files with sensitive data
+appsettings.json

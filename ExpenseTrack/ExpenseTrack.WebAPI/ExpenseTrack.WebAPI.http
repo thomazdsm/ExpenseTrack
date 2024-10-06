@@ -1,0 +1,6 @@
+@ExpenseTrack.WebAPI_HostAddress = http://localhost:5010
+
+GET {{ExpenseTrack.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

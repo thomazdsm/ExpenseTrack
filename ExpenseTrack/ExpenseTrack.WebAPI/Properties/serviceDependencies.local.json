@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "identityapp1": {
+      "connectionInfo": "App registration: ThomazUEMA, Tenant: uema.br (uema.br - Microsoft Entra ID)",
+      "type": "identityapp.default"
+    }
+  }
+}

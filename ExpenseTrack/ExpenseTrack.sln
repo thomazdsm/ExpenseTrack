@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTrack.Application", "ExpenseTrack.Application\ExpenseTrack.Application.csproj", "{53F179B2-0F10-47BF-8437-1AD7BA2162F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTrack.Application", "ExpenseTrack.Application\ExpenseTrack.Application.csproj", "{53F179B2-0F10-47BF-8437-1AD7BA2162F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTrack.Domain", "ExpenseTrack.Domain\ExpenseTrack.Domain.csproj", "{E7428C3F-3161-4EDF-B80F-4F0E127C64E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTrack.Domain", "ExpenseTrack.Domain\ExpenseTrack.Domain.csproj", "{E7428C3F-3161-4EDF-B80F-4F0E127C64E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTrack.Infra.Data", "ExpenseTrack.Infra.Data\ExpenseTrack.Infra.Data.csproj", "{AA536117-E474-4EB5-918E-C955BFB84EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTrack.Infra.Data", "ExpenseTrack.Infra.Data\ExpenseTrack.Infra.Data.csproj", "{AA536117-E474-4EB5-918E-C955BFB84EA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTrack.Infra.IoC", "ExpenseTrack.Infra.IoC\ExpenseTrack.Infra.IoC.csproj", "{679BF1A1-8844-4CB0-AF99-43EFBF7B9593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTrack.Infra.IoC", "ExpenseTrack.Infra.IoC\ExpenseTrack.Infra.IoC.csproj", "{679BF1A1-8844-4CB0-AF99-43EFBF7B9593}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTrack.WebAPI", "ExpenseTrack.WebAPI\ExpenseTrack.WebAPI.csproj", "{5425C988-592F-4DC7-BCAE-AF5DB7B6B7D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTrack.WebAPI", "ExpenseTrack.WebAPI\ExpenseTrack.WebAPI.csproj", "{DD753C8B-0F73-4783-8DAC-7B9DE4DAAD02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{679BF1A1-8844-4CB0-AF99-43EFBF7B9593}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{679BF1A1-8844-4CB0-AF99-43EFBF7B9593}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{679BF1A1-8844-4CB0-AF99-43EFBF7B9593}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5425C988-592F-4DC7-BCAE-AF5DB7B6B7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5425C988-592F-4DC7-BCAE-AF5DB7B6B7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5425C988-592F-4DC7-BCAE-AF5DB7B6B7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5425C988-592F-4DC7-BCAE-AF5DB7B6B7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD753C8B-0F73-4783-8DAC-7B9DE4DAAD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD753C8B-0F73-4783-8DAC-7B9DE4DAAD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD753C8B-0F73-4783-8DAC-7B9DE4DAAD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD753C8B-0F73-4783-8DAC-7B9DE4DAAD02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

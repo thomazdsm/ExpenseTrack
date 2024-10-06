@@ -45,6 +45,12 @@ namespace ExpenseTrack.Application.Services
             return _mapper.Map<CurrencyViewModel>(currency);
         }
 
+        public async Task<CurrencyViewModel> GetByCodeAsync(string code)
+        {
+            var currency = await _repository.GetByCodeAsync(code);
+            return _mapper.Map<CurrencyViewModel>(currency);
+        }
+
         public async Task UpdateAsync(CurrencyViewModel currencyViewModel)
         {
             var currency = _mapper.Map<Currency>(currencyViewModel);

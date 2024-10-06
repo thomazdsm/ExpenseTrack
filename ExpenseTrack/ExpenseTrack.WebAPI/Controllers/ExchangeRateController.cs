@@ -1,6 +1,7 @@
 ﻿using ExpenseTrack.Application.Interfaces;
 using ExpenseTrack.Application.Services;
 using ExpenseTrack.Application.ViewModels;
+using ExpenseTrack.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,10 +14,12 @@ namespace ExpenseTrack.WebAPI.Controllers
     {
 
         private readonly IExchangeRateService _exchangeRateService;
+        private readonly ICurrencyService _currencyService;
 
-        public ExchangeRateController(IExchangeRateService exchangeRateService)
+        public ExchangeRateController(IExchangeRateService exchangeRateService, ICurrencyService currencyService)
         {
             _exchangeRateService = exchangeRateService;
+            _currencyService = currencyService;
         }
 
         // GET: api/ExchangeRate
@@ -83,6 +86,32 @@ namespace ExpenseTrack.WebAPI.Controllers
             _exchangeRateService.DeleteAsync(id);
             return NoContent(); // Retorna 204 se for deletado com sucesso
             // TODO: Verificar esse output!
+        }
+
+        // GET api/ExchangeRate/GetLatestRateAsync/BRL/USD
+        [HttpGet("{targetCurrencyCode}/{baseCurrencyCode}")]
+        public async Task<ActionResult<ExchangeRateViewModel>> GetLatestRateAsync(string targetCurrencyCode, string baseCurrencyCode)
+        {
+            var targetCurrency = await _currencyService.GetByCodeAsync(targetCurrencyCode);
+            var baseCurrency = await _currencyService.GetByCodeAsync(baseCurrencyCode);
+
+            //var targetCurrency = await _currencyService.GetByCodeAsync(formExchangeRate.TargetCurrencyCode);
+            //var baseCurrency = await _currencyService.GetByCodeAsync(formExchangeRate.TargetCurrencyCode);
+
+            if (targetCurrency == null || baseCurrency == null)
+            {
+                return NotFound(); // Retorna 404 se não encontrar
+            }
+
+            // Get last rate
+            var exchangeRate = await _exchangeRateService.GetLatestRateAsync(targetCurrency.Id, baseCurrency.Id);
+
+            if (exchangeRate == null)
+            {
+                return NotFound(); // Retorna 404 se não encontrar
+            }
+
+            return Ok(exchangeRate);
         }
     }
 }

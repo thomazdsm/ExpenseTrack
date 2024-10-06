@@ -9,5 +9,9 @@ namespace ExpenseTrack.Domain.Interfaces
         Task AddAsync(ExchangeRate exchangeRate);
         Task UpdateAsync(ExchangeRate exchangeRate);
         Task DeleteAsync(int id);
+
+        // ExchangeRate API
+        Task<ExchangeRate> GetLatestRateAsync(int targetCurrencyId, int baseCurrencyId);
+
     }
 }

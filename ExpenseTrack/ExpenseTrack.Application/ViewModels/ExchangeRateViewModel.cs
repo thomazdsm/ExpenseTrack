@@ -18,4 +18,10 @@ namespace ExpenseTrack.Application.ViewModels
         public string BaseCurrencyCode { get; set; }
         public string TargetCurrencyCode { get; set; }
     }
+
+    public class FormExchangeRateViewModel
+    {
+        public string BaseCurrencyCode { get; set; }
+        public string TargetCurrencyCode { get; set; }
+    }
 }

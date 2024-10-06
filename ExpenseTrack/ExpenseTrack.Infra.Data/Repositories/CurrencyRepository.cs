@@ -45,6 +45,11 @@ namespace ExpenseTrack.Infra.Data.Repositories
             return await _context.Currencies.FindAsync(id);
         }
 
+        public async Task<Currency> GetByCodeAsync(string code)
+        {
+            return await _context.Currencies.FirstAsync(x => x.Code == code);
+        }
+
         public async Task UpdateAsync(Currency currency)
         {
             _context.Currencies.Update(currency);

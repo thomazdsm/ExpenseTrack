@@ -1,4 +1,5 @@
 ﻿using ExpenseTrack.Application.ViewModels;
+using ExpenseTrack.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,8 @@ namespace ExpenseTrack.Application.Interfaces
         Task AddAsync(ExchangeRateViewModel exchangeRate);
         Task UpdateAsync(ExchangeRateViewModel exchangeRate);
         Task DeleteAsync(int id);
+
+        // ExchangeRate API
+        Task<ExchangeRateViewModel> GetLatestRateAsync(int targetCurrencyId, int baseCurrencyId);
     }
 }

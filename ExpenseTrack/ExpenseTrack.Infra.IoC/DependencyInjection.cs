@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Polly;
+using Polly.Extensions.Http;
 
 namespace ExpenseTrack.Infra.IoC
 {
@@ -33,7 +35,21 @@ namespace ExpenseTrack.Infra.IoC
             services.AddScoped<IReceiptRepository, ReceiptRepository>();
             services.AddScoped<IReceiptService, ReceiptService>();
 
+
+            // Registro do ExchangeRateService com HttpClient e políticas de resiliência
+            services.AddHttpClient<IExchangeRateRepository, ExchangeRateRepository>()
+                    .SetHandlerLifetime(TimeSpan.FromMinutes(5))
+                    .AddPolicyHandler(GetRetryPolicy());
+
             return services;
+        }
+
+        private static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
+        {
+            // Implementando política de retry com Polly
+            return HttpPolicyExtensions
+                .HandleTransientHttpError()
+                .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
         }
     }
 }

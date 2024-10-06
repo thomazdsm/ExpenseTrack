@@ -16,6 +16,9 @@ namespace ExpenseTrack.Infra.Data.Context
         public DbSet<ExpenseCategory> ExpenseCategories { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
+        public DbSet<AuditLog> AuditLogs { get; set; }
+        public DbSet<Approval> Approvals { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -36,6 +39,15 @@ namespace ExpenseTrack.Infra.Data.Context
 
             // Configurações de Receipt
             builder.ApplyConfiguration(new ReceiptConfiguration());
+
+            // Configurações de Approval
+            builder.ApplyConfiguration(new ApprovalConfiguration());
+
+            // Configurações de AuditLog
+            builder.ApplyConfiguration(new AuditLogConfiguration());
+
+            // Configurações de Notification
+            builder.ApplyConfiguration(new NotificationConfiguration());
         }
     }
 }

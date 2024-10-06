@@ -50,5 +50,12 @@ namespace ExpenseTrack.Application.Services
             var exchangeRate = _mapper.Map<ExchangeRate>(exchangeRateViewModel);
             await _repository.UpdateAsync(exchangeRate);
         }
+
+        // ExchangeRate API
+        public async Task<ExchangeRateViewModel> GetLatestRateAsync(int targetCurrencyId, int baseCurrencyId)
+        {
+            var exchangeRate = await _repository.GetLatestRateAsync(targetCurrencyId, baseCurrencyId);
+            return _mapper.Map<ExchangeRateViewModel>(exchangeRate);
+        }
     }
 }

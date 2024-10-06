@@ -11,6 +11,7 @@ namespace ExpenseTrack.Application.Interfaces
     {
         Task<IEnumerable<CurrencyViewModel>> GetAllAsync();
         Task<CurrencyViewModel> GetByIdAsync(int id);
+        Task<CurrencyViewModel> GetByCodeAsync(string code);
         Task AddAsync(CurrencyViewModel currency);
         Task UpdateAsync(CurrencyViewModel currency);
         Task DeleteAsync(int id);

@@ -1,4 +1,5 @@
 using ExpenseTrack.Infra.Data.Context;
+using ExpenseTrack.Infra.Data.Seeders;
 using ExpenseTrack.Infra.IoC;
 using Microsoft.AspNetCore.Authentication.BearerToken;
 using Microsoft.AspNetCore.Identity;
@@ -67,6 +68,13 @@ builder.Services.AddAuthorization();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
+
+// Seed data
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    RolesSeed.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -18,4 +18,18 @@ namespace ExpenseTrack.Domain.Entities
         public virtual Currency BaseCurrency { get; set; }
         public virtual Currency TargetCurrency { get; set; }
     }
+
+    public class ExchangeRateResponse
+    {
+        public string Result { get; set; }
+        public string Documentation { get; set; }
+        public string Terms_of_use { get; set; }
+        public string Time_last_update_unix { get; set; }
+        public string Time_last_update_utc { get; set; }
+        public string Time_next_update_unix { get; set; }
+        public string Time_next_update_utc { get; set; }
+        public string Base_code { get; set; }
+        public string Target_code { get; set; }
+        public string Conversion_Rate { get; set; }
+    }
 }
